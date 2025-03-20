@@ -1,0 +1,14 @@
+.temperature-chart {
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2a3f54;
+    font-weight: 500;
+    font-size: 1.2rem;
+}

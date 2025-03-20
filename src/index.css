@@ -1,3 +1,8 @@
 body {
-    background: #202629;
+    background: linear-gradient(90deg, #615DC8 0%, #483F77 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
 }

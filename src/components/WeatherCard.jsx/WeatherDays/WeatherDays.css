@@ -1,3 +1,38 @@
+.weather-days {
+    background-color: #483F77;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(97, 93, 200, 0.3);
+    margin: 15px 0;
+    border: 2px solid #615DC8;
+}
+
+.day-item {
+    padding: 12px;
+    margin: 8px 0;
+    background-color: #403969;
+    transition: all 0.3s ease;
+}
+
+.day-item:hover {
+    background-color: #615DC8;
+    transform: translateX(5px);
+}
+
+.day-item .temperature-high {
+    color: #7571D1;
+    font-weight: bold;
+}
+
+.day-item .temperature-low {
+    color: #615DC8;
+    font-weight: 500;
+}
+
 .font-bold {
-  font-weight: bold;
+    font-weight: bold;
+    color: white;
+}
+
+a{
+    text-decoration: none;
 }

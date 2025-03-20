@@ -1,19 +1,78 @@
-  /* Weather */
-  .weather.card {
-    margin-top:4vh;
+/* Weather */
+.weather.card {
+  margin-top: 4vh;
+  background-color: #483f77;
+  border: 2px solid #615dc8;
+  box-shadow: 0 4px 15px rgba(97, 93, 200, 0.3);
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .weather.card .card-content {
-    background: #0b0829;
+  background-color: #483f77;
+  padding: 30px;
+  width: 50vw;
 }
 
 .weather.card .card-action {
-    background: #120944;
+  background-color: #615dc8;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
 }
 
 .weather .temperature {
-    margin-left:4vh;
-    font-size:120px;
-    font-family: 'Roboto', sans-serif;
-    text-shadow: -1px 0 #61dafb, 0 1px #61dafb, 1px 0 #61dafb, 0 -1px #61dafb;
+  margin-left: 4vh;
+  font-size: 120px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-weight: 300;
+}
+
+input {
+  background-color: #483f77;
+  border: 2px solid #615dc8;
+  padding: 12px;
+  margin-right: 8px;
+  color: white;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+button {
+  background-color: #615dc8;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #7571d1;
+  transform: translateY(-2px);
+}
+
+.flexcol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
 }
