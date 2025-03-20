@@ -1,12 +1,19 @@
 import './App.css'
+import Header from './components/Header/Header'
+import WeatherCard from './components/WeatherCard.jsx/WeatherCard'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <>
-      
-    </>
+    <div className="App">
+      <Header />
+      <div className="row">
+            <div className="col s12 m6 push-m3">
+          <WeatherCard />
+            </div>
+        </div>
+    </div>
   )
 }
 
