@@ -106,18 +106,18 @@ function WeatherCard() {
                 />
                 <button type="submit">Rechercher</button>
             </form>
-            <article className='felxcol'>
-    
+            <article className='flexcol'>
+                <div className='flex'>
                     <WeatherInfo
                         weatherData={days && days[selectedDay]}
                         isLoading={isLoading}
                         name={weather && weather.city}
                     />
+      {days && <TemperatureChart forecastDays={days} />}
+                   
 
-                    <WeatherDays forecastDays={days} onDayClick={handleDayClick} selectedDay={selectedDay} />
-
-           
-                {days && <TemperatureChart forecastDays={days} />}
+                </div>
+           <WeatherDays forecastDays={days} onDayClick={handleDayClick} selectedDay={selectedDay} />
             </article>
         </div>
     )

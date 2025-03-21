@@ -12,3 +12,33 @@ h3 {
     font-weight: 500;
     font-size: 1.2rem;
 }
+
+@media (max-width: 640px) { /* sm */
+    .temperature-chart {
+        padding: 20px;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) { /* md */
+    .temperature-chart {
+        padding: 15px;
+    }
+
+    h3 {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 1024px) { /* lg */
+    .temperature-chart {
+        padding: 10px;
+    }
+
+    h3 {
+        font-size: 0.8rem;
+    }
+}

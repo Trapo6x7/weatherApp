@@ -28,3 +28,31 @@
     scrollbar-color: #483F77 #f1f1f1;
     scrollbar-width: thin;
 }
+
+@media (max-width: 640px) { /* sm */
+    .App {
+        padding: 10px;
+    }
+
+    .App::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .App::-webkit-scrollbar-thumb {
+        border: 1px solid #ffffff;
+    }
+}
+
+@media (max-width: 768px) { /* md */
+    .App {
+        padding: 5px;
+    }
+
+    .App::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .App::-webkit-scrollbar-thumb {
+        border: none;
+    }
+}

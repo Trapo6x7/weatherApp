@@ -1,12 +1,11 @@
 /* Weather */
 .weather.card {
-  margin-top: 10vh;
+  margin-top: 2vh;
   background-color: #483f77;
   border: 2px solid #615dc8;
   box-shadow: 0 4px 15px rgba(97, 93, 200, 0.3);
   border-radius: 8px;
-  overflow-y:scroll;
-  height: 50vh;
+  width: 50vw;
 }
 
 .weather.card .card-content {
@@ -76,5 +75,49 @@ form{
   align-items: center;
   gap: 5%;
   margin:  10px 0;
+}
+
+@media (max-width: 640px) { /* sm */
+    .weather.card {
+        width: 90vw;
+        margin-top: 5vh;
+    }
+
+    .weather .temperature {
+        font-size: 80px;
+        margin-left: 2vh;
+    }
+
+    form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) { /* md */
+    .weather.card {
+        width: 95vw;
+        margin-top: 3vh;
+    }
+
+    .weather .temperature {
+        font-size: 60px;
+        margin-left: 1vh;
+    }
+
+    form {
+        gap: 5px;
+    }
+
+    input {
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
 }
 

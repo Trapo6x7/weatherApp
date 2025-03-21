@@ -2,7 +2,18 @@ body {
     background: linear-gradient(90deg, #615DC8 0%, #483F77 100%);
     min-height: 100vh;
     margin: 0;
-    padding: 20px;
     font-family: 'Roboto', sans-serif;
     color: white;
+}
+
+@media (max-width: 640px) { /* sm */
+    body {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) { /* md */
+    body {
+        padding: 5px;
+    }
 }

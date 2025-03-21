@@ -21,3 +21,33 @@
     color: #615DC8;
     font-weight: 500;
 }
+
+@media (max-width: 640px) { /* sm */
+    .weather-info {
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    .weather-info h4 {
+        font-size: 1rem;
+    }
+
+    .weather-info p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) { /* md */
+    .weather-info {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .weather-info h4 {
+        font-size: 0.9rem;
+    }
+
+    .weather-info p {
+        font-size: 0.8rem;
+    }
+}
