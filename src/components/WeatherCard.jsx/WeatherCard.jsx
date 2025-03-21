@@ -21,7 +21,6 @@ function WeatherCard() {
         event.preventDefault(); // Empêcher le rechargement de la page
         setIsLoading(true); // Afficher le message de chargement
 
-        // Récupérer les données de la ville saisie
         const url = `http://api.weatherapi.com/v1/forecast.json?key=${import.meta.env.VITE_WEATHER_API_KEY}&q=${city}&days=5&aqi=no&alerts=no`;
         try {
             const response = await fetch(url);
@@ -30,25 +29,27 @@ function WeatherCard() {
             }
             const json = await response.json();
 
-            setWeather({
-                city: json.location.name,
-                icon: json.current.condition.icon,
-                temperature: json.current.temp_c,
-                wind: {
-                    speed: json.current.wind_kph,
-                    direction: json.current.wind_dir,
-                },
-            });
+            setTimeout(() => { // Artificial delay
+                setWeather({
+                    city: json.location.name,
+                    icon: json.current.condition.icon,
+                    temperature: json.current.temp_c,
+                    wind: {
+                        speed: json.current.wind_kph,
+                        direction: json.current.wind_dir,
+                    },
+                });
 
-            const forecastDays = json.forecast.forecastday.map(day => ({
-                date: day.date,
-                icon: day.day.condition.icon,
-                temp: day.day.avgtemp_c,
-                condition: day.day.condition.text,
-            }));
+                const forecastDays = json.forecast.forecastday.map(day => ({
+                    date: day.date,
+                    icon: day.day.condition.icon,
+                    temp: day.day.avgtemp_c,
+                    condition: day.day.condition.text, // Removed translation
+                }));
 
-            setDays(forecastDays);
-            setIsLoading(false);
+                setDays(forecastDays);
+                setIsLoading(false);
+            }, 500); // 500ms delay
         } catch (error) {
             console.error(error.message);
         }
@@ -66,26 +67,26 @@ function WeatherCard() {
             const json = await response.json();
             console.log(json);
 
-            setWeather({
-                city: json.location.name,
-                icon: json.current.condition.icon,
-                temperature: json.current.temp_c,
-                wind: {
-                    speed: json.current.wind_kph,
-                    direction: json.current.wind_dir,
-                },
-            });
-            const forecastDays = json.forecast.forecastday.map(day => ({
-                date: day.date,
-                icon: day.day.condition.icon,
-                temp: day.day.avgtemp_c,
-                condition: day.day.condition.text,
-            }));
+            setTimeout(() => { // Artificial delay
+                setWeather({
+                    city: json.location.name,
+                    icon: json.current.condition.icon,
+                    temperature: json.current.temp_c,
+                    wind: {
+                        speed: json.current.wind_kph,
+                        direction: json.current.wind_dir,
+                    },
+                });
+                const forecastDays = json.forecast.forecastday.map(day => ({
+                    date: day.date,
+                    icon: day.day.condition.icon,
+                    temp: day.day.avgtemp_c,
+                    condition: day.day.condition.text, // Removed translation
+                }));
 
-            setDays(forecastDays);
-            setIsLoading(false);
-
-
+                setDays(forecastDays);
+                setIsLoading(false);
+            }, 500); // 500ms delay
         } catch (error) {
             console.error(error.message);
         }
@@ -96,29 +97,33 @@ function WeatherCard() {
     }, []);
 
     return (
-        <div className="weather card blue-grey darken-1 flexcol">
-            <form onSubmit={handleSearch}>
-                <input
-                    type="text"
-                    placeholder="Rechercher une ville"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)} // Mettre à jour la ville dans l'état
-                />
-                <button type="submit">Rechercher</button>
-            </form>
-            <article className='flexcol'>
-                <div className='flex'>
-                    <WeatherInfo
-                        weatherData={days && days[selectedDay]}
-                        isLoading={isLoading}
-                        name={weather && weather.city}
-                    />
-      {days && <TemperatureChart forecastDays={days} />}
-                   
-
-                </div>
-           <WeatherDays forecastDays={days} onDayClick={handleDayClick} selectedDay={selectedDay} />
-            </article>
+        <div className={`weather card blue-grey darken-1 flexcol ${isLoading ? 'center-loading' : ''}`}>
+            {isLoading ? (
+                <div className="loading-spinner"></div> // Full-height loading spinner
+            ) : (
+                <>
+                    <form onSubmit={handleSearch}>
+                        <input
+                            type="text"
+                            placeholder="Rechercher une ville"
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)} // Mettre à jour la ville dans l'état
+                        />
+                        <button type="submit">Rechercher</button>
+                    </form>
+                    <article className='flexcol'>
+                        <div className='flex'>
+                            <WeatherInfo
+                                weatherData={days && days[selectedDay]}
+                                isLoading={isLoading}
+                                name={weather && weather.city}
+                            />
+                            {days && <TemperatureChart forecastDays={days} />}
+                        </div>
+                        <WeatherDays forecastDays={days} onDayClick={handleDayClick} selectedDay={selectedDay} />
+                    </article>
+                </>
+            )}
         </div>
     )
 }
