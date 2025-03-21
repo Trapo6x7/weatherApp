@@ -2,8 +2,9 @@
 .weather.card {
   background-color: #483f77;
   border: 2px solid #615dc8;
-  box-shadow: 0 4px 15px rgba(97, 93, 200, 0.3);
-  border-radius: 8px;
+  box-shadow: none;
+  border-radius: 0;
+  border-left: 4px solid #615dc8;
   width: 50vw;
 }
 
@@ -144,5 +145,10 @@ form{
     button {
         padding: 8px 16px;
     }
+}
+
+.weather.card:hover {
+    box-shadow: none;
+    transform: none;
 }
 
