@@ -1,6 +1,5 @@
 /* Weather */
 .weather.card {
-  margin-top: 2vh;
   background-color: #483f77;
   border: 2px solid #615dc8;
   box-shadow: 0 4px 15px rgba(97, 93, 200, 0.3);
