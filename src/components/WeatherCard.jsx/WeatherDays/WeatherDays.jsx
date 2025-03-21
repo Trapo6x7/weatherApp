@@ -19,7 +19,10 @@ function WeatherDays({ forecastDays, onDayClick, selectedDay }) {
           key={index}
           href="#"
           className={index === selectedDay ? "font-bold" : ""} // Applique font-bold si c'est le jour sélectionné
-          onClick={() => onDayClick(index)} // Quand on clique, on envoie l'index du jour
+          onClick={(e) => {
+            e.preventDefault();
+            onDayClick(index);
+          }} // Quand on clique, on envoie l'index du jour
         >
           {index === 0 ? "Aujourd'hui" : formatDate(day.date)}
           <span className="day-indicator"></span>
