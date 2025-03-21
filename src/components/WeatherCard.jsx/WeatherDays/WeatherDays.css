@@ -35,6 +35,7 @@
 
 a{
     text-decoration: none;
+    color: #483F77;
 }
 
 @media (max-width: 640px) { /* sm */
