@@ -21,7 +21,7 @@ function WeatherCard() {
         event.preventDefault(); // Empêcher le rechargement de la page
         setIsLoading(true); // Afficher le message de chargement
 
-        const url = `http://api.weatherapi.com/v1/forecast.json?key=${import.meta.env.VITE_WEATHER_API_KEY}&q=${city}&days=5&aqi=no&alerts=no`;
+        const url = `https://api.weatherapi.com/v1/forecast.json?key=${import.meta.env.VITE_WEATHER_API_KEY}&q=${city}&days=5&aqi=no&alerts=no`;
         try {
             const response = await fetch(url);
             if (!response.ok) {
@@ -57,7 +57,7 @@ function WeatherCard() {
 
 
     async function getData() {
-        const url = `http://api.weatherapi.com/v1/forecast.json?key=${import.meta.env.VITE_WEATHER_API_KEY}&q=Saint-Etienne&days=5&aqi=no&alerts=no`;
+        const url = `https://api.weatherapi.com/v1/forecast.json?key=${import.meta.env.VITE_WEATHER_API_KEY}&q=Saint-Etienne&days=5&aqi=no&alerts=no`;
         try {
             const response = await fetch(url);
             if (!response.ok) {
