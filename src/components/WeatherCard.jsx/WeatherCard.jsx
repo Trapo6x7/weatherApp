@@ -12,7 +12,6 @@ function WeatherCard() {
     const [selectedDay, setSelectedDay] = useState(0); // Par défaut, le premier jour
     const [city, setCity] = useState("Saint-Etienne"); // Ville par défaut
 
-
     const handleDayClick = (index) => {
         setSelectedDay(index);
     };

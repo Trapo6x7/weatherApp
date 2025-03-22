@@ -2,9 +2,8 @@
 .weather.card {
   background-color: #483f77;
   border: 2px solid #615dc8;
-  box-shadow: none;
-  border-radius: 0;
-  border-left: 4px solid #615dc8;
+  box-shadow: 0 4px 15px rgba(97, 93, 200, 0.3);
+  border-radius: 8px;
   width: 50vw;
 }
 
@@ -147,8 +146,27 @@ form{
     }
 }
 
-.weather.card:hover {
-    box-shadow: none;
-    transform: none;
+.toggle-chart-button {
+    display: none; /* Supprime le bouton de basculement */
+}
+
+@media (max-width: 640px) { /* sm */
+    .toggle-chart-button {
+        display: none; /* Supprime le bouton de basculement */
+    }
+
+    .mobile-toggle {
+        display: none; /* Supprime les styles liés au basculement */
+    }
+}
+
+@media (min-width: 641px) { /* md et au-delà */
+    .toggle-chart-button {
+        display: none; /* Supprime le bouton de basculement */
+    }
+
+    .mobile-toggle {
+        display: none; /* Supprime les styles liés au basculement */
+    }
 }
 

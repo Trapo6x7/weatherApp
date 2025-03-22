@@ -49,6 +49,7 @@ h3 {
 @media (max-width: 640px) { /* sm */
     .temperature-chart {
         padding: 20px;
+        display: none; /* Masque le composant en format mobile */
     }
 
     h3 {

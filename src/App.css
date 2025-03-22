@@ -46,6 +46,7 @@
 @media (max-width: 768px) { /* md */
     .App {
         padding: 5px;
+        height: auto;
     }
 
     .App::-webkit-scrollbar {
