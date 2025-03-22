@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Legend, ResponsiveContainer } from 'recharts';
 import './TemperatureChart.css';
 
 function TemperatureChart({ forecastDays }) {
@@ -15,7 +15,6 @@ function TemperatureChart({ forecastDays }) {
           <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.6)" />
           <XAxis dataKey="date" />
           <YAxis />
-          <Tooltip />
           <Legend />
           <Line
             type="monotone"
