@@ -37,6 +37,7 @@ function WeatherCard() {
                         speed: json.current.wind_kph,
                         direction: json.current.wind_dir,
                     },
+                    update: json.current.last_updated,
                 });
 
                 const forecastDays = json.forecast.forecastday.map(day => ({
